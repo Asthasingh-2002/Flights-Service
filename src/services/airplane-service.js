@@ -2,6 +2,7 @@ const  {StatusCodes} = require('http-status-codes');
 
 const { AirplaneRepository } = require('../repositories');
 const AppError = require('../utils/errors/app-error'); 
+const { error } = require('../utils/common/error-response');
 
 const airplaneRepository = new AirplaneRepository();
 
@@ -23,6 +24,19 @@ async function createAirplane(data){
     }
 } 
 
+async function getAirplanes(){
+    
+    try {
+        const airplanes = await airplaneRepository.getAll();
+        return airplanes;
+    } catch (error) {
+        console.log(error);
+        throw new AppError('Cannot fetch data of all airplanes', StatusCodes.INTERNAL_SERVER_ERROR);
+    }
+}
+
+
 module.exports ={
-    createAirplane
+    createAirplane,
+    getAirplanes
 }
