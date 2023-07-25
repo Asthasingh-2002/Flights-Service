@@ -22,14 +22,6 @@ AirplaneController.getAirplanes);
 
   //  /api/v1/airplanes/:id DELETE
   router.delete('/:id',
-  AirplaneController.destroyAirplane);  
-  
-  
-  //  /api/v1/airplanes/:id update requset
-  router.patch('/:id',
-  AirplaneController.updateAirplane);  
-  
-
-
+  AirplaneController.destroyAirplane);      
   
 module.exports =router;
