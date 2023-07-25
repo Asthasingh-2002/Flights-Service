@@ -12,6 +12,15 @@ router.post('/',
         CityController.createCity);
 
  
+  //  /api/v1/airplanes/:id DELETE
+  router.delete('/:id',
+  CityController.destroyCity);  
+  
+
+  //  /api/v1/airplanes/:id update requset
+  router.patch('/:id',
+  CityController.updateCity);  
+  
 
   
 module.exports =router;
