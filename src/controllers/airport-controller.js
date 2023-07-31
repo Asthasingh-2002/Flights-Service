@@ -10,7 +10,7 @@ const { AirportService} =require('../services');
  */
 async function createAirport(req,res){
  try {
-    const airport = await AirplaneService.createAirport({
+    const airport = await AirportService.createAirport({
         name: req.body.name,
         code: req.body.code,
         address: req.body.address,
