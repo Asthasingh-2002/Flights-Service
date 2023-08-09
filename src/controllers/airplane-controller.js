@@ -44,7 +44,7 @@ try {
 }
 }
 /**
- * POST: /airplanes/:id
+ * GET: /airplanes/:id
  * req-body{}
  */
 
