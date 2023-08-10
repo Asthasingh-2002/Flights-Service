@@ -18,5 +18,11 @@ router.get('/',
   
   //  /api/v1/flight?trips:id GET
 router.get('/:id',
-FlightController.getFlight);     
+FlightController.getFlight);  
+
+// /api/v1/flights/:id/seats PATCH
+router.patch(
+       '/:id/seats', 
+       FlightMiddlewares.validateUpdateSeatsRequest,
+       FlightController.updateSeats)
 module.exports =router;
